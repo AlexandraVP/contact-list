@@ -1,0 +1,43 @@
+body {
+    background-color: #fbfbfb;
+}
+
+.layout {
+  display: flex;
+  align-items: center;
+    justify-content: center;
+}
+
+
+.form {
+    margin-top: 20%;
+    border: 2px solid #bcbdbd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 0 20px 20px;
+}
+
+.button:hover {
+    border: 1px solid dimgrey;
+}
+
+.button {
+    border: 1px solid dimgrey;
+    border-radius: 2px;
+    width: 130px;
+}
+
+.username {
+    border-radius: 2px;
+}
+
+.password {
+    margin: 5px 0 10px 0;
+    border-radius: 2px;
+}
