@@ -74,7 +74,7 @@ const profiles = [
         comment: 'fruit merchant',
         logo: 'https://freesvg.org/img/egore911_market.png',
         phone: '555-1234',
-        email: null
+        email: ''
     },
     {
         id: 8,
@@ -90,7 +90,7 @@ const profiles = [
         comment: 'hairdresser',
         logo: 'https://freesvg.org/img/johnny-automatic-barber.png',
         phone: '555-5323',
-        email: null
+        email: ''
     },
     {
         id: 10,
@@ -149,10 +149,10 @@ app.post('/contacts', function (req, res){
             res.send();
         }else{
             const currentProfile = profiles.find(p => p.id === profile.id);
-            currentProfile.name = profile.name;
-            currentProfile.phone = profile.phone;
-            currentProfile.email = profile.email;
-            currentProfile.comment = profile.comment;
+            currentProfile.name = profile.name || '';
+            currentProfile.phone = profile.phone || '';
+            currentProfile.email = profile.email || '';
+            currentProfile.comment = profile.comment || '';
             res.status(200);
             res.send();
         }
