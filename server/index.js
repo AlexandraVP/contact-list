@@ -48,7 +48,7 @@ const profiles = [
         id: 4,
         name: 'John',
         comment: 'colleague',
-        logo: 'https://freesvg.org/img/Graduation-Boy-Profile-Circle-Silhouette---1.0.0.png',
+        logo: 'https://freesvg.org/img/1526102315.png',
         phone: '555-1179',
         email: 'john-donn@company.inc'
     },
@@ -73,7 +73,7 @@ const profiles = [
         name: 'Ashot',
         comment: 'fruit merchant',
         logo: 'https://freesvg.org/img/egore911_market.png',
-        phone: '555-1234',
+        phone: '555-0234',
         email: ''
     },
     {
