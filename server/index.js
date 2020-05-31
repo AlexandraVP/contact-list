@@ -129,10 +129,10 @@ app.get('/contacts', function (req,res){
             .filter(w => w);
         res.send(
             profiles.filter(p =>
-                words.some(w => p.name.includes(w) ||
-                    p.email.includes(w) ||
-                    p.phone.includes(w) ||
-                    p.comment.includes(w)
+                words.some(w => p.name.toLowerCase().includes(w) ||
+                    p.email.toLowerCase().includes(w) ||
+                    p.phone.toLowerCase().includes(w) ||
+                    p.comment.toLowerCase().includes(w)
                 )
             )
         );
