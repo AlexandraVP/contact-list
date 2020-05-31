@@ -123,7 +123,19 @@ app.post('/login', function (req, res) {
 
 app.get('/contacts', function (req,res){
     requireAuth(req, res, () => {
-        res.send(profiles);
+        const {query} = req.body;
+        const words = query.split(' ')
+            .map(w => w.trim())
+            .filter(w => w);
+        res.send(
+            profiles.filter(p =>
+                words.some(w => p.name.includes(w) ||
+                    p.email.includes(w) ||
+                    p.phone.includes(w) ||
+                    p.comment.includes(w)
+                )
+            )
+        );
     });
 });
 
