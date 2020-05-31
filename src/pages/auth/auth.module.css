@@ -30,7 +30,7 @@ body {
 .button {
     border: 1px solid dimgrey;
     border-radius: 2px;
-    width: 130px;
+    width: 150px;
 }
 
 .username {
@@ -40,4 +40,18 @@ body {
 .password {
     margin: 5px 0 10px 0;
     border-radius: 2px;
+}
+
+.error {
+    position: absolute;
+    top: 0;
+    left: 3px;
+    font-size: 9px;
+    margin-top: 5px;
+    color: red;
+}
+
+.errorContainer {
+    position: relative;
+    width: 135px;
 }

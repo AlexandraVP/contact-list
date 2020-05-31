@@ -9,7 +9,7 @@ function generateToken(){
 }
 
 const users = [
-    {login: 'Admin', password: 'Admin'}
+    {login: 'admin', password: 'admin'}
 ];
 
 const sessions = [];
