@@ -124,6 +124,10 @@ app.post('/login', function (req, res) {
 app.get('/contacts', function (req,res){
     requireAuth(req, res, () => {
         const {query} = req.query;
+        if(!query){
+            res.send(profiles);
+            return;
+        }
         const words = query.split(' ')
             .map(w => w.trim())
             .filter(w => w);
