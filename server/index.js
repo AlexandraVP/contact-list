@@ -4,7 +4,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-function generateToken(){
+function generateRandomKey(){
     return (Math.random()*(16**9-16**8) + 16**8).toString(16);
 }
 
@@ -21,7 +21,7 @@ function requireAuth(req,res, callback){
 
 const profiles = [
      {
-        id: 1,
+        id: generateRandomKey(),
         name: 'Mr. Smith',
         comment: 'boss',
         logo: 'https://freesvg.org/img/shokunin_businessman.png',
@@ -29,7 +29,7 @@ const profiles = [
         email: 'mr.boss@company.inc'
     },
     {
-        id: 2,
+        id: generateRandomKey(),
         name: 'Uncle Poe',
         comment: 'dacha neighbour',
         logo: 'https://freesvg.org/img/fermier.png',
@@ -37,7 +37,7 @@ const profiles = [
         email: 'uncle.bob@dacha.org'
     },
     {
-        id: 3,
+        id: generateRandomKey(),
         name: 'Max',
         comment: 'univercity',
         logo: 'https://freesvg.org/img/Graduation-Boy-Profile-Circle-Silhouette---1.0.0.png',
@@ -45,7 +45,7 @@ const profiles = [
         email: 'super-max@univercity.com'
     },
     {
-        id: 4,
+        id: generateRandomKey(),
         name: 'John',
         comment: 'colleague',
         logo: 'https://freesvg.org/img/1526102315.png',
@@ -53,7 +53,7 @@ const profiles = [
         email: 'john-donn@company.inc'
     },
     {
-        id: 5,
+        id: generateRandomKey(),
         name: 'Bill',
         comment: 'landlord',
         logo: 'https://freesvg.org/img/squire-plain.png',
@@ -61,7 +61,7 @@ const profiles = [
         email: 'bill-rich@veryrich.com'
     },
     {
-        id: 6,
+        id: generateRandomKey(),
         name: 'Holmes',
         comment: 'sheriff',
         logo: 'https://freesvg.org/img/detectiveprofile.png',
@@ -69,7 +69,7 @@ const profiles = [
         email: 'holmes@sherlock.holmes'
     },
     {
-        id: 7,
+        id: generateRandomKey(),
         name: 'Ashot',
         comment: 'fruit merchant',
         logo: 'https://freesvg.org/img/egore911_market.png',
@@ -77,7 +77,7 @@ const profiles = [
         email: ''
     },
     {
-        id: 8,
+        id: generateRandomKey(),
         name: 'Arnold',
         comment: 'trainer',
         logo: 'https://freesvg.org/img/logo16.png',
@@ -85,7 +85,7 @@ const profiles = [
         email: 'trainer@gym.com'
     },
     {
-        id: 9,
+        id: generateRandomKey(),
         name: 'Felix',
         comment: 'hairdresser',
         logo: 'https://freesvg.org/img/johnny-automatic-barber.png',
@@ -93,7 +93,7 @@ const profiles = [
         email: ''
     },
     {
-        id: 10,
+        id: generateRandomKey(),
         name: 'Anna',
         comment: 'colleague',
         logo: 'https://freesvg.org/img/1396435340.png',
@@ -112,7 +112,7 @@ app.post('/login', function (req, res) {
     const {login, password} = req.body;
     const user = users.find(u => u.login === login && u.password === password);
     if(user && !sessions.some(s => s.user === user)){
-        const token = generateToken();
+        const token = generateRandomKey();
         sessions.push({token, user});
         res.send({token});
     }else{
@@ -147,7 +147,7 @@ app.post('/contacts', function (req, res){
     requireAuth(req, res, () => {
         const profile = req.body;
         if(!profile.id){
-            profile.id = profiles.length + 1;
+            profile.id = generateRandomKey();
             profiles.push(profile);
             res.status(200);
             res.send();
