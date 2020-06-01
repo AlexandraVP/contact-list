@@ -41,7 +41,6 @@ button:focus{
 .cardContact {
     display: grid;
     grid-template-columns: 390px 390px 350px;
-    padding: 5px;
     margin-bottom: 10px;
 
 }

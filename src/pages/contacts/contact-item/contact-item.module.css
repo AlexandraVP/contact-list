@@ -17,6 +17,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: row;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
 }
 .receivedInfo {
     display: flex;
