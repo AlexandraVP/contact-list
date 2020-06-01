@@ -147,7 +147,7 @@ app.post('/contacts', function (req, res){
     requireAuth(req, res, () => {
         const profile = req.body;
         if(!profile.id){
-            profile.id = profiles.length;
+            profile.id = profiles.length + 1;
             profiles.push(profile);
             res.status(200);
             res.send();
