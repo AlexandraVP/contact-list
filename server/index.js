@@ -166,7 +166,7 @@ app.post('/contacts', function (req, res){
 
 app.del('/contacts/:id', function (req, res){
     requireAuth(req, res, () => {
-        const id = +req.params.id;
+        const id = req.params.id;
         const profileI = profiles.findIndex(p => p.id === id);
         profiles.splice(profileI, 1);
         res.status(200);
