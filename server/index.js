@@ -153,6 +153,7 @@ app.post('/contacts', function (req, res){
             currentProfile.phone = profile.phone || '';
             currentProfile.email = profile.email || '';
             currentProfile.comment = profile.comment || '';
+            currentProfile.logo = profile.logo || '';
             res.status(200);
             res.send();
         }
