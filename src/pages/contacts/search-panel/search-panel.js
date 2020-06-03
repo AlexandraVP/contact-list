@@ -10,7 +10,7 @@ export class SearchPanel extends Component {
     timerId = null;
 
     updateQuery = (event) => {
-        this.setState({query: event.target.value.trim().toLowerCase()});
+        this.setState({query: event.target.value});
         this.delaySearch();
     }
 

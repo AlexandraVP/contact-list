@@ -40,7 +40,7 @@ class Contacts extends Component {
     };
 
     searchContacts = async (query='', logoutOnFail=false) => {
-        const response = await fetch(`/contacts?query=${query}`,
+        const response = await fetch(`/contacts?query=${query.trim().toLowerCase()}`,
             {
                 headers: getAuthHeader()
             }
